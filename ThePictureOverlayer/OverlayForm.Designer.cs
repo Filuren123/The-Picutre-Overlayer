@@ -38,9 +38,9 @@ namespace ThePictureOverlayer
             this.pcb_MainPictureShow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcb_MainPictureShow.Location = new System.Drawing.Point(1, -2);
+            this.pcb_MainPictureShow.Location = new System.Drawing.Point(-1, -2);
             this.pcb_MainPictureShow.Name = "pcb_MainPictureShow";
-            this.pcb_MainPictureShow.Size = new System.Drawing.Size(766, 417);
+            this.pcb_MainPictureShow.Size = new System.Drawing.Size(771, 417);
             this.pcb_MainPictureShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_MainPictureShow.TabIndex = 0;
             this.pcb_MainPictureShow.TabStop = false;

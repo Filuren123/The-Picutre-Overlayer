@@ -60,12 +60,13 @@ namespace ThePictureOverlayer
         {
             if (!ValidateOpacityValue()) return;
 
-            OverlayForm overlayForm = new OverlayForm();
+            var overlayFormOpacity = double.Parse(txb_OverlayOpacity.Text) / 100;
+            OverlayForm overlayForm = new OverlayForm(overlayFormOpacity);
             overlayForm.Show();
-            overlayForm.Opacity = double.Parse(txb_OverlayOpacity.Text) / 100;
 
             OverlayFormControl overlayFormControl = new OverlayFormControl(overlayForm, this);
             overlayFormControl.Show();
+            this.Hide();
         }
     }
 }

@@ -11,9 +11,13 @@ namespace ThePictureOverlayer
 {
     public partial class OverlayForm : Form
     {
-        public OverlayForm()
+        byte trueOpacity;
+
+        public OverlayForm(double trueOpacity)
         {
             InitializeComponent();
+            this.Opacity = trueOpacity;
+            this.trueOpacity = (byte)(trueOpacity * 255);
         }
 
         private void OverlayForm_Load(object sender, EventArgs e)
@@ -55,7 +59,7 @@ namespace ThePictureOverlayer
             int wl = GetWindowLong(this.Handle, GWL.ExStyle);
             wl = wl | 0x80000 | 0x20;
             SetWindowLong(this.Handle, GWL.ExStyle, wl);
-            SetLayeredWindowAttributes(this.Handle, 0, 128, LWA.Alpha);
+            SetLayeredWindowAttributes(this.Handle, 0, trueOpacity, LWA.Alpha);
         }
     }
 }
