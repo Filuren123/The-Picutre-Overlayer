@@ -12,6 +12,8 @@ namespace ThePictureOverlayer
 {
     public partial class PictureChooseHub : Form
     {
+        public static string FilePathPicture = string.Empty;
+
         public PictureChooseHub()
         {
             InitializeComponent();
@@ -30,6 +32,7 @@ namespace ThePictureOverlayer
         private void UpdatePicturePreview()
         {
             pcb_PicturePreview.ImageLocation = dlg_ChoosePicture.FileName;
+            FilePathPicture = dlg_ChoosePicture.FileName;
         }
 
         private bool ValidateOpacityValue()
@@ -57,9 +60,12 @@ namespace ThePictureOverlayer
         {
             if (!ValidateOpacityValue()) return;
 
-            var overLayForm = new OverlayForm();
-            overLayForm.Show();
-            overLayForm.Opacity = double.Parse(txb_OverlayOpacity.Text) / 100;
+            OverlayForm overlayForm = new OverlayForm();
+            overlayForm.Show();
+            overlayForm.Opacity = double.Parse(txb_OverlayOpacity.Text) / 100;
+
+            OverlayFormControl overlayFormControl = new OverlayFormControl(overlayForm, this);
+            overlayFormControl.Show();
         }
     }
 }
